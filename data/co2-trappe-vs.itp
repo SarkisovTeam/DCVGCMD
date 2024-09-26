@@ -1,0 +1,40 @@
+[ moleculetype ]
+; Name           nrexcl
+CO2              2
+
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB
+     1         OZ      1    CO2      OC1      1   -0.35    0.000000
+     2         CZ      1    CO2      CO       1    0.70    0.000000
+     3         OZ      1    CO2      OC2      1   -0.35          0.000000
+     4        MCO      1    CO2      MCO1      1     0.000          22.0049     
+     5        MCO      1    CO2      MCO2      1     0.000          22.0049
+
+
+[ constraints ]
+; Overall structure is O1--M1---C---M2--O2 where "M" indicate mass centers
+; There are no bonds in this system
+; Instead, we fix the distance between the mass centers such that
+; the virtual sites can be reconstructed
+    4   5   1   0.197995
+
+[ exclusions ]
+1 2 3 4 5
+2 1 3 4 5
+3 1 2 4 5
+4 1 2 3 5
+5 1 2 3 4
+
+[ virtual_sites2 ]
+; the M1--O1 distance is 0.1161 - (0.197995/2) = 0.0171025
+; the M1--M2 distance is 0.197995
+; therefore, the fraction of the distance O1M2 along the M1--M2 length is (0.197995+0.0171025)/0.197995 = 1.0863784
+; thus placing the virtual O1 sites beyond the M1--M2 distance 
+; site  ai(from)  aj  funct   a
+     1   4   5      1   1.0863784  ; relative to mass center 4, extends beyond mass center 5 
+     2   4   5      1   0.5000      ; right in the middle
+     3   5   4      1   1.0863784   ; as in the case of site 1
+
+
+

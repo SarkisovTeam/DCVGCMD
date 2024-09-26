@@ -1,0 +1,31 @@
+; Tim Yuan
+; Lev Sarkisov Research Group
+; 19th Sept, 2023
+; N2 itp file from TraPPE force field
+
+
+[ moleculetype ]
+; molname   nrexcl
+N2         2
+
+[ atoms ]
+; id    at type       resnr  resname    atname  cgnr    charge
+1       N             1       n2      NM1      1       -0.482
+2       N             1       n2      NM2      1       -0.482
+3       M             1       n2      MN1      1        0.964
+
+[ constraints ]
+; i j   funct   length
+1   2   1       0.11
+
+
+[ exclusions ]
+1   2   3
+2   1   3
+3   1   2
+
+
+[ virtual_sites2 ]
+; Site from i j funct a
+3           1 2 1   0.5     ;right in the middle
+

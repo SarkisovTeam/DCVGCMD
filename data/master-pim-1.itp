@@ -1,0 +1,50 @@
+; Tim Yuan
+; Lev Sarkisov Research Group
+; 19th Sept, 2023
+; master file
+
+
+[ defaults ]
+; nbfunc       comb-rule       gen-pairs     fudgeLJ    fudgeQQ
+  1        2           yes            1.0        1.0
+
+; n2 trappe
+[ atomtypes ]
+; name    mass      charge   ptype       sigma       epsilon
+N      14.0067    -0.482     A          0.331      0.299304
+M            0     0.964     V            0.0      0.0
+
+[ atomtypes ]
+; name    mass      charge   ptype       sigma       epsilon
+OW      15.9994    -0.35     A          0.3050      0.656806
+CO      12.0107     0.7    A            0.2800      0.224478
+
+
+[ atomtypes ]
+; name    mass      charge   ptype       sigma       epsilon
+OEM       15.9994    -0.3256     A          0.3033      0.6693724
+CEM       12.0107     0.6512     A          0.2757      0.2338775
+
+
+
+; wall
+[ atomtypes ]
+; name    mass      charge   ptype       sigma       epsilon
+CD      12.01100    0.00000 A   0.356359487  0.292880
+
+; co2 trappe with vs
+[ atomtypes ]
+;name  bond_type    mass    charge   ptype          sigma      epsilon
+OZ        OZ      15.99940   0.0000    A           3.0500e-01  0.656806e0
+CZ        CZ      12.01100   0.0000    A           2.8000e-01  0.224478e0
+MCO       MCO       0.000    0.000     A              0.000      0.000
+
+[ atomtypes ]
+; name       mass       charge  ptype      sigma    epsilon
+  C1PI   12.01100     0.000000      A   0.347299   0.397898
+  C2PI   12.01100     0.000000      A   0.347299   0.397898
+   OPI   15.99940     0.000000      A   0.303315   0.400409
+   HPI    1.00800     0.000000      A   0.284642   0.063597
+   NPI   14.00670     0.000000      A   0.326256   0.323842
+
+

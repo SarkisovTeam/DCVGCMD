@@ -1,0 +1,59 @@
+
+
+dt                      =  0.002                    ; time step
+nsteps                  =  25000                   ; number of steps
+comm-grps               =  System
+comm-mode               =  Linear
+nstcomm                 =  10                       ; reset c.o.m. motion
+nstcalcenergy           =  10                       ; calculate energy -- this must be less than nstcomm
+nstxout                 =  00                       ; write coords
+nstvout                 =  00                       ; write velocities
+nstlog                  =  1000                     ; print to logfile
+nstenergy               =  500                      ; print energies
+compressed-x-grps       =  System
+;nstxout-compressed      =  500
+nstxout-compressed      =  500
+
+pbc                     =  xy
+nwall                   =  2
+wall-atomtype           =  CD CD
+wall-type               = 10-4
+wall-r-linpot           = -1
+wall-density            = 5 5
+wall-ewald-zfac         = 3
+ewald-geometry          = 3dc
+
+
+
+
+ns_type                 =  grid                     ; pairlist method
+nstlist                 =  10                       ; update pairlist (with verlet this is a min)
+cutoff-scheme           =  Verlet                   ; Use Verlet method for pair lists
+verlet-buffer-tolerance =  0.005                    ; Default for npt simulation
+vdwtype                 =  Cut-off                  ; Cutoff for LJ
+vdw-modifier            =  Potential-shift-Verlet   ; Potential shift with Verlet scheme
+coulombtype             =  PME                      ; Use PME for long-range electrostatics
+rvdw                    =  1.0                      ; cut-off for vdw
+rcoulomb                =  1.0                      ; cut-off for coulomb
+DispCorr                =  EnerPres                 ; long range correction
+
+Tcoupl                  =  v-rescale                ; Equilibration -- use v-rescale
+tc-grps                 =  !PIM PIM                  ; t-coupl to entire system
+tau_t                   =  1.0 1.0                    ; time constant for t-coupl
+ref_t                   =  308.15  308.15                  ; desired temperature
+
+Pcoupl                  =  no                       ; NVT!
+pcoupltype              =  isotropic            ; semiisotropic pressure coupling
+ref_p                   =  1.0               ; desired pressure
+tau_p                   =  2.0                      ; time constant for p-coupl
+compressibility         =  4.5e-5                ; compressibility of water
+
+gen_vel                 =  no                      ; generate init. vel
+gen_temp                =  308.15                    ; init. temp.
+gen_seed                =  -1                       ; random seed
+
+constraints             =  h-bonds                  ; constrain h-bonds
+constraint_algorithm    =  LINCS
+lincs-order             =  6
+
+

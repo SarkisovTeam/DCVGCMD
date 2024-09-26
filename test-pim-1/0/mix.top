@@ -1,0 +1,11 @@
+#include "../../data/master-pim-1.itp"
+#include "../../data/co2-trappe-vs.itp"
+#include "../../data/n2-trappe.itp"
+#include "../../data/masterff.itp"
+
+[ system ]
+Mixed CO2 and N2
+
+[ molecules ]
+PIM                1
+N2    2
