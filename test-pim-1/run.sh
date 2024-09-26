@@ -11,6 +11,11 @@ export GMX_MAXCONSTRWARN=-1
 export OMP_NUM_THREADS=8
 
 #-------------------------------------------------------------------
+# The default prefix of GROMACS is gmx, please change it accordingly
+#-------------------------------------------------------------------
+gmx=gmx
+#gmx=gmx_mpi
+#-------------------------------------------------------------------
 a=100   #we have 100 moves, and each simulation have 50 ps 
 
 
@@ -48,16 +53,16 @@ do
   #-------------------------------------------------------------------
    python ../../src/replace-cv-5s-v5.py -b ../../data/${rand}.gro -i ../$j/membrane.gro -p ../0/mix.top  -t mix.top -s info_inlet -box 8.09715x5.64766x5 -pos 0x0x1 -o inlet.gro -ip ../0/membrane.gro -op posres.gro
 
-  gmx editconf  -f inlet.gro -o inlet.gro -resnr 1
+  $gmx editconf  -f inlet.gro -o inlet.gro -resnr 1
 
   #-------------------------------------------------------------------
   # Outlet control volume exchange
   #-------------------------------------------------------------------
   python ../../src/replace-cv-5s-v5.py -b ../0/empty.gro -i inlet.gro -p ../0/mix.top  -t mix.top -s info_outlet -box 8.09715x5.64766x5  -pos 0x0x20 -o outlet.gro -ip ../0/membrane.gro -op posres.gro
 
-  gmx editconf  -f outlet.gro -o outlet.gro -resnr 1
+  $gmx editconf  -f outlet.gro -o outlet.gro -resnr 1
 
-gmx make_ndx -f outlet.gro -o index-run.ndx <<EOF
+$gmx make_ndx -f outlet.gro -o index-run.ndx <<EOF
 ! r PIM
 a CO
 a OC1
@@ -69,8 +74,8 @@ q
 EOF
 
 
-  gmx grompp -f ../0/nvteq-t308.mdp -c  outlet.gro -p mix.top -o nvt-1bar-308K-mix.tpr  -r posres.gro -n index-run.ndx -maxwarn 100
-  gmx mdrun -s nvt-1bar-308K-mix.tpr -v -deffnm nvt-1bar-308K-mix -ntmpi 1  -notunepme
+  $gmx grompp -f ../0/nvteq-t308.mdp -c  outlet.gro -p mix.top -o nvt-1bar-308K-mix.tpr  -r posres.gro -n index-run.ndx -maxwarn 100
+  $gmx mdrun -s nvt-1bar-308K-mix.tpr -v -deffnm nvt-1bar-308K-mix -ntmpi 1  -notunepme
 
   fi
   done
