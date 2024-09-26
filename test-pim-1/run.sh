@@ -1,10 +1,16 @@
 #!/bin/bash
 
 # This is the script for performing DCVGCMD using GROMACS
-
+#-------------------------------------------------------------------
+# We need to load the necessary executables, in this case GROMACS
+# This scrip assumes it runs with GPU and ntmpi, change the commands
+# accordingly to fit your own machine. 
+#-------------------------------------------------------------------
 gmx2023
 export GMX_MAXCONSTRWARN=-1
 export OMP_NUM_THREADS=8
+
+#-------------------------------------------------------------------
 a=100   #we have 100 moves, and each simulation have 50 ps 
 
 
