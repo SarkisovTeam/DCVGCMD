@@ -1,6 +1,6 @@
 # DCVGCMD
 
-This is an test case for the DCVGCMD method implement in Yuan et al., 2024, ...
+This is an test case for the DCVGCMD method implement in Yuan et al...
 
 It shoud contain three folders:
 
@@ -26,6 +26,6 @@ and source the run.sh file
 source run.sh
 ```
 
-Please be careful with the settings and parameters.
+Please be careful with the settings and parameters. Make sure the gromacs prefix is the same as your local environment and check if it works with -ntmpi. 
 
 

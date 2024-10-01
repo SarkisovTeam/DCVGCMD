@@ -11,7 +11,6 @@ nstvout                 =  00                       ; write velocities
 nstlog                  =  1000                     ; print to logfile
 nstenergy               =  500                      ; print energies
 compressed-x-grps       =  System
-;nstxout-compressed      =  500
 nstxout-compressed      =  500
 
 pbc                     =  xy
