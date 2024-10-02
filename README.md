@@ -57,5 +57,7 @@ Forcefield files for PIM-1, CO2, and N2. As well as a example bulk reservoir wit
 tianmu.yuan(at)manchester.ac.uk
 
 Tianmu (Tim) Yuan
+
 Department of Chemical Engineering
+
 The University of Manchester
