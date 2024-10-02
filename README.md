@@ -51,3 +51,11 @@ The posres.gro file is the file used for position restraining in GROMACS.
 ### Data
 
 Forcefield files for PIM-1, CO2, and N2. As well as a example bulk reservoir with 15:85 CO2:N2 at 1 bar. 
+
+## Contact
+
+tianmu.yuan(at)manchester.ac.uk
+
+Tianmu (Tim) Yuan
+Department of Chemical Engineering
+The University of Manchester
