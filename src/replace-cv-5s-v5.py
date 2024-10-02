@@ -30,7 +30,7 @@ np.set_printoptions(threshold=sys.maxsize)
 def parseargs():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                             description="Tim Yuan\n\nLev Sarkisov Research Group\n\n"+modified+"\n\n"
-                            "This program is used to perform DCVGCMD"
+                            "This program is used to perform DCVGCMD control volume replacementa.\n\n"
                             )
     parser.add_argument("-i", "--input_i", help="Specify the input file DCVGCMD setup",
                        default="", metavar='')
@@ -41,25 +41,25 @@ def parseargs():
     parser.add_argument("-p", "--input_p", help="Specify the input topology",
                        default="", metavar='')
 
-    parser.add_argument("-o", "--output_o", help="specify the name for output grofile",
+    parser.add_argument("-o", "--output_o", help="specify the name for output grofile, default dcvgcmd.gro",
                         default="dcvgcmd.gro", metavar='')
 
-    parser.add_argument("-op", "--oposres", help="specify the name for output grofile for posres",
+    parser.add_argument("-op", "--oposres", help="specify the name for output grofile for posres, default posres.gro",
                         default="posres.gro", metavar='')
 
-    parser.add_argument("-ip", "--iposres", help="specify the name for original grofile for posres",
+    parser.add_argument("-ip", "--iposres", help="specify the name for original grofile for posres, default membrane.gro",
                         default="membrane.gro", metavar='')
 
-    parser.add_argument("-t", "--output_t", help="specify the name for output topology",
+    parser.add_argument("-t", "--output_t", help="specify the name for output topology, default dcvgcmd.top",
                         default="dcvgcmd.top", metavar='')
 
-    parser.add_argument("-s", "--output_s", help="specify the name for output info store file",
+    parser.add_argument("-s", "--output_s", help="specify the name for output info store file, default info.store",
                         default="info.store", metavar='')
 
-    parser.add_argument("-box", "--box", help="specify the size of the cv box, 0x0x0 format",
+    parser.add_argument("-box", "--box", help="specify the size of the cv box, 0x0x0 format, default 5x5x5",
                         default="5x5x5", metavar='')
 
-    parser.add_argument("-pos", "--pos", help="specify the starting position of the cv, 0x0x0 format",
+    parser.add_argument("-pos", "--pos", help="specify the starting position of the cv, 0x0x0 format, default 0x0x1",
                         default="0x0x1", metavar='')
 
 

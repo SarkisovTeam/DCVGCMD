@@ -1,6 +1,6 @@
-# DCVGCMD
+# Dual Control Volume Grand Canonical Molecular Dyanmics
 
-This is an test case for the DCVGCMD method implement in Yuan et al...
+This is an test case for the Dual Control Volume Grand Canonical Molecular Dyanmics (DCVGCMD) method implement in Yuan et al...
 
 It shoud contain three folders:
 
@@ -30,6 +30,16 @@ Please be careful with the settings and parameters. Make sure the gromacs prefix
 
 ## Useful information
 
+### Src:
+
+replace-cv-5s-v5.py is a python scrip that performs the exchange of the control volumes. Use
+
+```
+python replace-cv-5s-v5.py -h 
+```
+
+for help. An example is also available in the test-pim-1 folder. 
+
 ### Output: 
 
 The folder genereated with numbers are the simulations from the DCVGCMD setup. There are several files that you should find useful other than the standard gromacs files, e.g., trajectories (.xtc), energies (.edr). 
@@ -38,3 +48,6 @@ Two info files: info_inlet and info_outlet contains the atom addition/deletion o
 
 The posres.gro file is the file used for position restraining in GROMACS. 
 
+### Data
+
+Forcefield files for PIM-1, CO2, and N2. As well as a example bulk reservoir with 15:85 CO2:N2 at 1 bar. 
