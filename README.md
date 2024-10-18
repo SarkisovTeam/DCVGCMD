@@ -31,9 +31,9 @@ To run the DCVGCMD simulation using the provided test case:
 
 2. Source the `run.sh` file to set up the environment and initiate the simulation:
   
-  ```bash
-  source run.sh
-  ```
+   ```bash
+   source run.sh
+   ```
 
 ### Important Notes:
 -  **GROMACS Prefix**: Ensure that the GROMACS prefix in the script matches your local GROMACS installation.
@@ -61,7 +61,7 @@ An example of how to use the script is provided in the `test-pim-1` folder.
 
 During the simulation, the following outputs will be generated:
 
-- **Simulation Folders**: Folders with numerical names corresponding to different simulation runs.
+- **Simulation Folders**: Folders with numerical names corresponding to different simulation runs (starting from 0).
 - **Trajectory Files**: .xtc files containing simulation trajectories.
 - **Energy Files**: .edr files storing energy data from the simulation.
 - **Info Files**:
